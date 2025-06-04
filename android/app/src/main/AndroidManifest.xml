@@ -12,7 +12,7 @@
 
     <application
         android:icon="@mipmap/ic_launcher"
-        android:label="Frezka"
+        android:label="Rinzin"
         tools:replace="android:label">
 
         <meta-data
