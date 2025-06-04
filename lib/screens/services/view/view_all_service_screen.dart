@@ -728,9 +728,9 @@ class _ViewAllServiceScreenState extends State<ViewAllServiceScreen> {
                     if (secondTime) {
                       // Sync from storeServiceList to selectedService
                       for (var storedService in storeServiceList) {
-                        if (selectedService.any((s) => s.id != storedService.id)) {
+                        if (serviceListData.any((s) => s.id != storedService.id)) {
                          // selectedService.remo
-                          selectedService.remove(storedService);
+                          serviceListData.remove(storedService);
                          // appStore.setService(storedService); // Add to appStore
                         }
                       }
