@@ -1,0 +1,100 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+    id "com.google.gms.google-services"
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
+
+android {
+    //namespace "com.frezka.customer"
+    namespace "com.rinzin.customer"
+    compileSdkVersion 35
+    ndkVersion "27.0.12077973"
+
+    kotlinOptions {
+       // jvmTarget = '1.8'
+        jvmTarget = '17'
+    }
+
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_17 // Must match Kotlin 2.x
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        applicationId "com.rinzin.customer"
+        minSdkVersion 23
+        targetSdkVersion 34
+        versionCode 20
+        versionName "3.3.1"
+        multiDexEnabled true
+    }
+
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            minifyEnabled false // Disable R8
+            shrinkResources false
+        }
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+configurations.all {
+    resolutionStrategy {
+        force 'androidx.browser:browser:1.5.0'
+    }
+}
+
+dependencies {
+
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    // Fix Metadata conflict (MUST HAVE for Kotlin 2.x)
+    implementation 'org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.9.0' // Supports Kotlin 2.1.x
+
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:32.7.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
+    // Other deps
+    implementation 'phonepe.intentsdk.android.release:IntentSDK:2.3.0'
+    implementation 'com.google.android.gms:play-services-wallet:19.3.0'
+
+    // Desugaring (Java 17 support)
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
+
+}

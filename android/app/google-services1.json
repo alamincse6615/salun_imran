@@ -1,0 +1,94 @@
+{
+  "project_info": {
+    "project_number": "137917352549",
+    "project_id": "frezka-app",
+    "storage_bucket": "frezka-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:137917352549:android:3310a8354980d43b5d948c",
+        "android_client_info": {
+          "package_name": "com.frezka.customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "137917352549-9tsm4m3ioh8k3cgbfbcu5arv9on25f9t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.frezka.customer",
+            "certificate_hash": "4a1d6d6080d62fd4aefbcc6cb9ff8a641a963bab"
+          }
+        },
+        {
+          "client_id": "137917352549-adfp5tur6mb9auij0nj3cnqqcdk8h824.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.frezka.customer",
+            "certificate_hash": "18f062e3a644ac8f41190911ce1c29e898b6d373"
+          }
+        },
+        {
+          "client_id": "137917352549-atbeqev4l36qou6fr1dn0hllbjq1o038.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.frezka.customer",
+            "certificate_hash": "f9d892a9f72e7a3add05f22ced759cf608211dcb"
+          }
+        },
+        {
+          "client_id": "137917352549-b9i6gqsfdkbvvqd1poaf1ee4c57j6ift.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.frezka.customer",
+            "certificate_hash": "3d0bd8e0998afa3a0042f03152935f77d98ec22b"
+          }
+        },
+        {
+          "client_id": "137917352549-ihpm1qqir4s932opu3pn2gccr6cfo0bd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.frezka.customer",
+            "certificate_hash": "dfbd0a46b0df84c4bafdaed5abf6d6642265eb62"
+          }
+        },
+        {
+          "client_id": "137917352549-qhnm6avrg3ioo2d8ibu59k7a9pftp7vg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.frezka.customer",
+            "certificate_hash": "07d278e7bce9fd51d997e197fbfd0ce29e023df7"
+          }
+        },
+        {
+          "client_id": "137917352549-tk9q5c8vo8qk3frmoklqi900dq5t9qr6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgc5Bp6Ciu28yfN5dcHx56heYKwOblrFQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "137917352549-h3eqi9rn29koq9hpsegj2a5fgassindo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "137917352549-2ihficak3avnko971fadloba3446futu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.frezka.user"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

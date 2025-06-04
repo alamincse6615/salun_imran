@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "648718647740",
+    "project_id": "rinzin-1ab5b",
+    "storage_bucket": "rinzin-1ab5b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648718647740:android:5d41fc598ee11a5e3c2bb9",
+        "android_client_info": {
+          "package_name": "com.rinzin.customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648718647740-kqgfeceop5o3e84vc42beqhe48bh6024.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rinzin.customer",
+            "certificate_hash": "860791b59f9c6445f6c56f09445d97de70cc9ad1"
+          }
+        },
+        {
+          "client_id": "648718647740-btj233djdum5aiorctonsbck75evjtff.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDTROr_8V-SfQDpWIFL_mi6YKH-8dOxMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "648718647740-4uep7aiddurh0omjjag7pptrf95tcioh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

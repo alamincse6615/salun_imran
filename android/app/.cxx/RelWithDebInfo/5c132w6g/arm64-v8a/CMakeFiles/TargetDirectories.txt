@@ -1,0 +1,2 @@
+C:/Users/Eite/Downloads/Frezka v3.3.2/android/app/.cxx/RelWithDebInfo/5c132w6g/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/Eite/Downloads/Frezka v3.3.2/android/app/.cxx/RelWithDebInfo/5c132w6g/arm64-v8a/CMakeFiles/rebuild_cache.dir
