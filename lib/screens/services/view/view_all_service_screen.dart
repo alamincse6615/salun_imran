@@ -128,6 +128,7 @@ class _ViewAllServiceScreenState extends State<ViewAllServiceScreen> {
   void init() async {
     try{
       storeServiceList = appStore.selectedServiceList;
+     // storeServiceList = appStore.selectedServiceListByCategoryId(categoryId:widget.categoryId);
       print(storeServiceList);
     }catch(e){
       print(e.toString());
@@ -467,6 +468,7 @@ class _ViewAllServiceScreenState extends State<ViewAllServiceScreen> {
             subWidgetHeight: (isCatExpanded?containerHeight:0)+120+(totalItem*28),
             onSwipeRefresh: () {
               page = 1;
+              firstTime = true;
 
               appStore.setLoading(true);
               selectedService.clear();
@@ -692,6 +694,37 @@ class _ViewAllServiceScreenState extends State<ViewAllServiceScreen> {
 
                   onSuccess: (servicesInfoListData) {
                     // 1. Initialize lists if null
+                    selectedService ??= [];
+                    storeServiceList ??= [];
+
+// 2. Load current category services
+                    final currentCategoryServices = List<ServiceListData>.from(servicesInfoListData);
+
+// 3. First-time initialization
+                    if (firstTime) {
+                      // Sync from storeServiceList to selectedService
+                      for (var storedService in storeServiceList) {
+                        if (!selectedService.any((s) => s.id == storedService.id)) {
+                          selectedService.add(storedService);
+                          appStore.setService(storedService); // Add to appStore
+                        }
+                      }
+                      firstTime = false;
+                    }
+
+// 4. Create serviceListData only from current category services
+                    serviceListData = List<ServiceListData>.from(currentCategoryServices);
+
+// 5. Update selection states
+                    for (var service in serviceListData) {
+                      service.isServiceChecked = selectedService.any((s) => s.id == service.id);
+                    }
+
+// 6. Set selected services (including those from storeServiceList)
+                    bookingRequestStore.setSelectedServiceListInRequest(selectedService);
+
+
+                    /*// 1. Initialize lists if null
                     storeServiceList ??= [];
                     selectedService ??= [];
 
@@ -725,7 +758,7 @@ class _ViewAllServiceScreenState extends State<ViewAllServiceScreen> {
                     }
                     bookingRequestStore.setSelectedServiceListInRequest(selectedService);
 
-                    if (secondTime) {
+                    if (false) {
                       // Sync from storeServiceList to selectedService
                       for (var storedService in storeServiceList) {
                         if (serviceListData.any((s) => s.id != storedService.id)) {
@@ -735,9 +768,12 @@ class _ViewAllServiceScreenState extends State<ViewAllServiceScreen> {
                         }
                       }
                       secondTime = false;
-                    }
+                    }*/
 
 
+
+
+                    /// check
 
                     // 6. Sort with selected first
                     /*serviceListData.sort((a, b) {

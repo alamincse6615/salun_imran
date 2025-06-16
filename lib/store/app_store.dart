@@ -70,6 +70,15 @@ abstract class _AppStore with Store {
   List<ServiceListData> get selectedServiceList => _selectedService;
 
   @computed
+  List<ServiceListData> selectedServiceListByCategoryId({int? categoryId}) {
+    if (categoryId == null) {
+      return _selectedService;
+    } else {
+      return _selectedService.where((service) => service.categoryId == categoryId).toList();
+    }
+  }
+
+  @computed
   bool get isBranchSelected => branchId != UNSELECTED_BRANCH_ID;
 
   @observable
