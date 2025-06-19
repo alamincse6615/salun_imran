@@ -17,6 +17,7 @@ const ic_phone_pe = 'assets/images/ic_phone_pe.png';
 
 const paytm_logo = 'assets/images/paytm_logo.png';
 const logo_gif = 'assets/images/logo_gif.gif';
+const splash = 'assets/images/splash.gif';
 const imgForceUpdate = 'assets/images/force_update.png';
 const product_1 = 'assets/images/product_1.png';
 const product_2 = 'assets/images/product_2.png';

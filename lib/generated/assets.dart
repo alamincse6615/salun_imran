@@ -90,6 +90,7 @@ class Assets {
   static const String imagesImgSlider = 'assets/images/img_slider.png';
   static const String imagesImgSlider2 = 'assets/images/img_slider2.png';
   static const String imagesLogoGif = 'assets/images/logo_gif.gif';
+  static const String splash = 'assets/images/splash.gif';
   static const String imagesPaypalLogo = 'assets/images/paypal_logo.png';
   static const String imagesPaystackLogo = 'assets/images/paystack_logo.png';
   static const String imagesProduct = 'assets/images/product.jpg';

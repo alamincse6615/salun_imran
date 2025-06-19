@@ -75,11 +75,25 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+    ));
+
+    return Scaffold(
+        extendBodyBehindAppBar: true,
+        body: Image.asset(
+            splash,
+            height: double.infinity,
+            width: double.infinity,
+            fit: BoxFit.cover
+        )
+    );
     return Scaffold(
       body: Container(
         color: context.primaryColor,
         height: context.height(),
         width: context.width(),
+
         child: Container(
           padding: EdgeInsets.all(16),
           decoration: boxDecorationDefault(shape: BoxShape.circle),
